@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram/screens/feed_page.dart';
 
 class MainPage extends StatefulWidget{
   @override
@@ -9,7 +10,7 @@ class _MainPageState extends State {
   int _selectedIndex = 0;
 
   static List<Widget> _widgetOptions = <Widget>[
-    Container(color: Colors.primaries[0],),
+    FeedPage(),
     Container(color: Colors.primaries[1],),
     Container(color: Colors.primaries[2],),
     Container(color: Colors.primaries[3],),
@@ -19,9 +20,6 @@ class _MainPageState extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('20억짜리 앱'),
-      ),
       body: IndexedStack(
         index: _selectedIndex,
         children: _widgetOptions,
